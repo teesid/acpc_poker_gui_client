@@ -1,33 +1,6 @@
 {
   "games": {
-    "two_player_limit": {
-      "label": "Heads-up Limit Texas Hold'em",
-      "max_num_matches": 2,
-      "num_hands_per_match": 2,
-      "file": "%{dealer_directory}/holdem.limit.2p.reverse_blinds.game",
-      "num_players": 2,
-      "opponents": {
-        "ExamplePlayer": {
-          "runner": "%{dealer_directory}/example_player.limit.2p.sh",
-          "requires_special_port": false
-        }
-      }
-    },
-    "hidden_two_player_limit": {
-      "label": "Heads-up Limit Texas Hold'em (Hidden Matches)",
-      "max_num_matches": 2,
-      "num_hands_per_match": 2,
-      "file": "%{dealer_directory}/holdem.limit.2p.reverse_blinds.game",
-      "num_players": 2,
-      "opponents": {
-        "ExamplePlayer": {
-          "runner": "%{dealer_directory}/example_player.limit.2p.sh",
-          "requires_special_port": false
-        }
-      },
-      "hide_other_matches": true
-    },
-    "two_player_nolimit": {
+    "two_player_nolimit_vs_example": {
       "label": "Heads-up No-limit Texas Hold'em",
       "max_num_matches": 2,
       "num_hands_per_match": 100,
@@ -40,19 +13,15 @@
         }
       }
     },
-    "three_player_kuhn": {
-      "label": "3-player Kuhn",
+    "two_player_nolimit_vs_deepholdem": {
+      "label": "Heads-up No-limit Texas Hold'em",
       "max_num_matches": 2,
-      "num_hands_per_match": 3000,
-      "file": "%{dealer_directory}/kuhn.limit.3p.game",
-      "num_players": 3,
+      "num_hands_per_match": 100,
+      "file": "/code/game_defs/holdem.nolimit.2p.reverse_blinds.game",
+      "num_players": 2,
       "opponents": {
-        "Sf1": {
-          "runner": "%{dealer_directory}/kuhn_3p_equilibrium_player.sf1.sh",
-          "requires_special_port": false
-        },
-        "Sf2": {
-          "runner": "%{dealer_directory}/kuhn_3p_equilibrium_player.sf2.sh",
+        "DeepHoldem": {
+          "runner": "/code/bots/deepholdem.sh",
           "requires_special_port": false
         }
       }

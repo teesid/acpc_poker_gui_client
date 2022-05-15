@@ -9,3 +9,4 @@ realtime/node_modules
 .git
 .vagrant
 data
+*~
